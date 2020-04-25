@@ -129,7 +129,7 @@ Role name: kubernetes-cluster-worker-iam-role and save it
 - EC2 server
 - OS: Ubuntu 18
 # Label the EC2 instances (tagging) with
-- tag:  key=kubernetes.io/cluster/kubernetes    value=owner
+- tag:  key=kubernetes.io/cluster/kubernetes    value=owned
 #  Note: Since its Single Master Node, Master and Worker Nodes should be in same Zone in AWS cloud
 - zone: us-east-1a
 - Security Group:  
