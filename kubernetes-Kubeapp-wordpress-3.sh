@@ -55,7 +55,7 @@ kubectl create namespace wordpress
 # Install wordpress
 helm install wordpress bitnami/wordpress --namespace wordpress --set wordpressUsername=wordpress --set wordpressPassword=wordpress  --set global.storageClass=gp2 --set mariadb.rootUser.password=wordpress --set mariadb.db.password=wordpress --set mariadb.master.persistence.storageClass=gp2
 
-export SERVICE_IP=$(kubectl get svc --namespace wordpress wordpress --template "{{ range (index .status.loadBalancer.ingress 0) }}{{.}}{{ end }}")
+export SERVICE_IP=$(kubectl get svc --namespace wordpress wordpress | awk {'print $4'} | tail -n1)
 echo "wordpress URL: http://$SERVICE_IP:80"
 
 ## END ##
