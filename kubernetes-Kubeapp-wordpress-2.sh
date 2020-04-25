@@ -102,7 +102,7 @@ sudo apt-mark hold kubelet kubeadm kubectl
 #    cloud-provider: aws
 #EOF
 
-# kubeadm init --config /etc/kubernetes/node.yaml
+# kubeadm join --config /etc/kubernetes/node.yaml
 
 
 
