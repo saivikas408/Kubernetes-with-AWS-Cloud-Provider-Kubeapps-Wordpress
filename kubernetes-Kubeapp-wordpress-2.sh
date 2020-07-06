@@ -102,10 +102,21 @@ sudo apt-mark hold kubelet kubeadm kubectl
 #    cloud-provider: aws
 #EOF
 
+OR 
+
+#cat << EOF > /etc/kubernetes/node.yaml
+#apiVersion: kubeadm.k8s.io/v1beta2
+#kind: JoinConfiguration
+#discovery:
+#  bootstrapToken:
+#    token: "3yeyro.3h7uq3v5d1i1l3ic"
+#    apiServerEndpoint: "172.31.87.129:6443"
+#    caCertHashes:
+#      - "sha256:b6988478aa2218c6ebe91bb68ba8365520bb6cba43adb797308340e51ed8bd9f"
+#nodeRegistration:
+#  name: ip-172-31-88-20.ec2.internal
+#  kubeletExtraArgs:
+#    cloud-provider: aws
+#EOF
+
 # kubeadm join --config /etc/kubernetes/node.yaml
-
-
-
-
-
-
